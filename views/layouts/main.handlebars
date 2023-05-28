@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Natsuemi</title>
+</head>
+<body class="bg-gray-500">
+    {{> header}}
+    <main>
+        {{#if sucess_msg}}
+            <div class="mx-auto container bg-green-400 p-4 m-4 md:rounded">
+                {{sucess_msg}}
+            </div>
+        {{/if}}
+        {{#if error_msg}}
+            <div class="mx-auto container bg-red-400 p-4 m-4 md:rounded">
+                {{error_msg}}
+            </div>
+        {{/if}}
+        {{#if error}}
+            <div class="mx-auto container bg-red-400 p-4 m-4 md:rounded">
+                {{error}}
+            </div>
+        {{/if}}
+        {{{ body }}}
+    </main>
+    {{> footer}}
+</body>
+</html>

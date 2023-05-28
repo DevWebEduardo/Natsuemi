@@ -1,0 +1,20 @@
+<section class="block w-full lg:container mx-auto lg:rounded bg-gray-700 p-8 px-3 text-white">
+    <h3 class="text-center text-2xl font-bold">New Admin Login</h3>
+    <form action="/admin/register" method="POST" class="flex flex-col">
+        <label for="user" class="pt-4 w-full xs:w-10/12 text-lg lg:w-4/12 mx-auto">Login</label>
+        <input type="text" name="user" id="user" class="w-full xs:w-10/12 lg:w-4/12 mx-auto text-gray-700 p-2">
+        <label for="password" class="pt-4 w-full xs:w-10/12 text-lg lg:w-4/12 mx-auto">Password</label>
+        <input type="password" name="password" id="password" class="w-full xs:w-10/12 lg:w-4/12 mx-auto text-gray-700 p-2">
+        <label for="passwordconf" class="pt-4 w-full xs:w-10/12 text-lg lg:w-4/12 mx-auto">Confirm Password</label>
+        <input type="password" name="passwordconf" id="passwordconf" class="w-full xs:w-10/12 lg:w-4/12 mx-auto text-gray-700 p-2">
+        <button type="submit" class="font-bold mt-8 mx-auto w-8/12 lg:w-3/12 bg-blue-400 text-gray-800 p-3 text-lg lg:text-xl rounded hover:text-gray-50">Register</button>
+    </form>
+    {{#if error}}
+        <div class="bg-red-400 p-4 m-10 rounded">
+            <p>
+                <b>Error: </b>{{error}}
+            </p>
+        </div>
+    {{/if}}
+</section>
+

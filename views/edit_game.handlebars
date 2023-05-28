@@ -1,0 +1,32 @@
+<section class="w-full p-2 md:w-auto md:p-0 md:container mx-auto">
+    <form action="/admin/game/edit/{{ actualInfo.id }}" method="POST" enctype="multipart/form-data" class=" w-full flex flex-col my-10 text-center text-gray-50 text-xl">
+        <label for="game" class="font-bold pb-4">Game</label>
+            <input type="text" name="game" id="game" class="text-gray-800 p-2" value="{{ actualInfo.name }}">
+        <label for="thumb" class="font-bold py-2">Image</label>
+        <input id="thumb" name="thumb" type="file" class="text-gray-50 p-2 mx-auto"/>
+        <label class="font-bold text-red-400 pt-2 pb-2">* Upload images with 575 x 325 px. *</label>
+        <label for="description" class="font-bold py-4">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10" class="text-gray-800 p-2">{{{actualInfo.description}}}</textarea>
+        <label for="platforms" class="font-bold py-4">Plataform</label>
+            <select name="platforms" class="text-gray-800 py-2">
+                {{#each actualInfo.platforms}}
+                    <option value="{{ this }}">{{ this }}</option>
+                {{/each}}
+            </select>
+        <label for="categories" class="font-bold py-4">Categories</label>
+            <select name="categories" multiple class="text-gray-800 py-2">
+                {{#each actualInfo.categories}}
+                    <option value="{{ this }}">{{ this }}</option>
+                {{/each}}
+            </select>
+        <label class="font-bold text-red-400 pt-2 pb-2">* Hold down the Ctrl (windows) or Command (Mac) button to select multiple options. *</label>
+            <label for="modes" class="font-bold py-4">Modes</label>
+            <select name="modes" multiple class="text-gray-800 py-2">
+                {{#each actualInfo.modes}}
+                    <option value="{{ this }}">{{ this }}</option>
+                {{/each}}
+            </select>
+        <label class="font-bold text-red-400 pt-2 pb-8">* Hold down the Ctrl (windows) or Command (Mac) button to select multiple options. *</label>
+        <button type="submit" class="mx-auto bg-gray-50 text-gray-800 w-5/6 font-bold md:w-4/12 rounded px-2 py-2 hover:bg-gray-300">Save</button>
+    </form>
+</section>

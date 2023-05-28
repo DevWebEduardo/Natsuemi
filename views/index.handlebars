@@ -1,0 +1,35 @@
+<section class="w-full pt-10 bg-gray-700">
+    <div class="bg-black flex justify-center items-center w-full h-96 lg:container lg:mx-auto text-center">
+        <div id="banner" class="w-full h-96 lg:container lg:mx-auto text-center">
+        </div>
+        <p class="absolute text-white drop-shadow-2xl text-2xl xs:text-3xl md:text-4xl font-bold lg:text-5xl pb-2">
+            Playing together is much more fun! <br>
+            Find co-op games now.
+        </p>
+    </div>
+</section>
+<section class="w-full lg:container mx-auto pt-6">
+    {{#each games}}
+        <div class="flex-column items-center justify-center py-4 px-6 lg:m-4 mb-8 lg:rounded bg-gray-700 text-white">
+            <h3 class="text-center text-2xl font-bold xs:font-normal md:text-3xl">{{name}}</h3>
+            <div class="flex-row pt-2 justify-center items-center text-center">
+                <button class="p-1 xs:p-3 rounded m-1 bg-gray-600 text-white hover:bg-gray-500 hover:text-black">{{page}}</button> 
+                {{#each platform}}
+                    <button class="p-1 xs:p-3 rounded m-1 bg-gray-600 text-white hover:bg-gray-500 hover:text-black">{{this}}</button> 
+                {{/each}}
+                {{#each categorie}}
+                    <button class="p-1 xs:p-3 rounded m-1 bg-gray-600 text-white hover:bg-gray-500 hover:text-black">{{this}}</button> 
+                {{/each}}
+                {{#each mode}}
+                    <button class="p-1 xs:p-3 rounded m-1 bg-gray-600 text-white hover:bg-gray-500 hover:text-black">{{this}}</button> 
+                {{/each}}
+            </div>
+            <div class="flex-column lg:flex justify-center items-center text-center py-6">
+                <img src="./assets/games/{{image}}" alt="thumbnail" class="mx-auto md:w-3/6 lg:w-5/12 h-auto">
+                <p class="text-lg xs:text-xl lg:text-2xl p-4 lg:w-7/12">
+                    {{{description}}}
+                </p>
+            </div>
+        </div>
+    {{/each}}
+</section>

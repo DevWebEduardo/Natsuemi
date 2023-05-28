@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    #pre-banner{
+        background-image: url('../images/wallpaper.jpg');
+        background-size:cover;
+        background-repeat: repeat-y;
+        background-position-x: center;
+        background-position-y: center;
+        opacity: 0.5;
+    }
+    #banner{
+        background-image: url('../images/wallpaper.jpg');
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        opacity: 0.6;
+    }
+}

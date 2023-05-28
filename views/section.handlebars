@@ -1,0 +1,62 @@
+<section class="w-full lg:container mx-auto lg:px-7 xl:px-4 pt-24 ">
+    <div class="bg-gray-700 w-full py-6 px-2 xs:px-4 sm:px-6 lg:container mx-auto lg:rounded">
+        <form method="GET" action="/page/{{section}}/" class="flex flex-col justify-center items-center lg:text-2xl 2xl:flex-row">
+            <label for="categorie" class="py-1 px-4 sm:py-2 text-white font-bold">Classification: </label>
+            <select name="categorieForm" id="" class="text-center w-full p-2 text-sm xs:text-lg sm:text-xl md:w-3/6 lg:w-5/12 2xl:w-2/12">
+                {{#each categorie}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <label for="platform" class="py-1 px-4 sm:py-2 text-white font-bold">Platform: </label>
+            <select name="platformForm" id="" class="text-center w-full p-2 text-sm xs:text-lg sm:text-xl md:w-3/6 lg:w-5/12 2xl:w-2/12">
+                {{#each platform}} 
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <label for="mode" class="py-1 px-4 sm:py-2 text-white font-bold">Mode: </label>
+            <select name="modeForm" id="" class="text-center w-full p-2 text-sm xs:text-lg sm:text-xl md:w-3/6 lg:w-5/12 2xl:w-2/12">
+                {{#each mode}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+            <button class="px-10 py-2 mt-4 rounded text-sm xs:text-lg md:text-xl w-full md:w-3/6 bg-gray-200 text-gray-800 lg:w-2/6 2xl:w-auto 2xl:ml-10 2xl:mt-0 hover:bg-gray-300 hover:text-white hover:bg-blue-500">Search</button>
+        </form>
+    </div>
+</section>
+
+<section class="w-full lg:container mx-auto pt-5">
+    {{#each games}}
+        <div class="flex-column items-center justify-center py-4 px-6 lg:m-4 mb-8 lg:rounded bg-gray-700 text-white">
+            <h3 class="text-center text-2xl font-bold xs:font-normal md:text-3xl">{{name}}</h3>
+            <div class="flex-row pt-2 justify-center items-center text-center">
+                <button class="p-1 xs:p-3 rounded m-1 bg-gray-600 text-white hover:bg-gray-500 hover:text-black">{{page}}</button> 
+                {{#each platform}}
+                    <button class="p-1 xs:p-3 rounded m-1 bg-gray-600 text-white hover:bg-gray-500 hover:text-black">{{this}}</button> 
+                {{/each}}
+                {{#each categorie}}
+                    <button class="p-1 xs:p-3 rounded m-1 bg-gray-600 text-white hover:bg-gray-500 hover:text-black">{{this}}</button> 
+                {{/each}}
+                {{#each mode}}
+                    <button class="p-1 xs:p-3 rounded m-1 bg-gray-600 text-white hover:bg-gray-500 hover:text-black">{{this}}</button> 
+                {{/each}}
+            </div>
+            <div class="flex-column lg:flex justify-center items-center text-center py-6">
+                <img src="/assets/games/{{image}}" alt="thumbnail" class="mx-auto md:w-3/6 lg:w-5/12 h-auto">
+                <p class="text-lg xs:text-xl lg:text-2xl p-4 lg:w-7/12">
+                    {{{description}}}
+                </p>
+            </div>
+        </div>
+    {{/each}}
+    {{#if pages}}
+        <div class="md:bg-gray-700 w-full flex mx-auto sm:w-fit sm:rounded">
+            <ul class="flex mx-auto text-center text-xl xs:p-2 xs:text-2xl md:text-3xl font-bold text-white">
+                {{#each pages}}
+                    <a href="/c/{{section}}/{{this}}">
+                        <li class="bg-gray-800 rounded mx-2 px-3 py-2 hover:bg-gray-300 hover:text-black">{{this}}</li>
+                    </a>
+                {{/each}}
+            </ul>
+        </div>
+    {{/if}}
+</section>

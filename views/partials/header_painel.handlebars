@@ -1,0 +1,39 @@
+<header class="bg-blue-500 w-full">
+    <nav class="text-right lg:text-center">
+        <button id="mobile-button" class="mr-2 text-5xl sm:p-0 md:p-1 lg:hidden lg:m-0">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul id="menu" class="flex-column justify-center mt-2 hidden items-center xs:text-lg lg:m-0 md:text-xl lg:flex lg:text-xl xl:text-2xl">
+            <a href="/admin/">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">Painel</li>
+            </a>
+            <a href="/admin/games">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">Games</li>
+            </a>
+            <a href="/admin/pages">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">Pages</li>
+            </a>
+            <a href="/admin/platforms">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">Platforms</li>
+            </a>
+            <a href="/admin/categories">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">Categories</li>
+            </a>
+            <a href="/admin/modes">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">Modes</li>
+            </a>
+            <a href="/admin/logout">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">Logout</li>
+            </a>
+        </ul>
+    </nav>
+</header>
+<script>
+    const btn = document.querySelector('button[id=mobile-button]');
+    const menu = document.querySelector('ul[id=menu]');
+
+    btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    });
+
+</script>

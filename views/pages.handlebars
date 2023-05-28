@@ -1,0 +1,28 @@
+<section class="w-full px-2 md:px-0 mt-10 md:w-auto md:container mx-auto text-center">
+    <a href="/admin/new_page" class="text-md md:text-xl">
+        <button class="bg-green-200 text-gray-800 w-5/6 font-bold md:w-4/12 rounded px-2 py-2 hover:bg-green-100">New Page</button>
+    </a>
+</section>
+<section class="w-full px-2 md:px-0 md:w-auto md:container mx-auto text-center">
+    <table class="text-center p-6 w-full mt-10 text-gray-50 text-md md:text-xl">
+        <tr class="w-full border border-solid border-1 border-white">
+            <th class="w-3/6 p-2">Name</th>
+            <th class="w-3/6 p-2">Link</th>
+        </tr>
+        {{#each pages}}
+            <tr>
+                <td class="p-2">{{name}}</td>
+                <td class="p-2">
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <a href="/admin/page/edit/{{ _id }}">
+                            <button class="bg-green-200 text-gray-800 w-36 rounded px-2 py-2 hover:bg-green-100 md:mr-4">Edit</button>
+                        </a>
+                        <a href="/admin/page/delete/{{ _id }}">
+                            <button class="bg-red-200 text-gray-800 w-36 rounded px-2 py-2 hover:bg-red-100 mt-2 md:mt-0">Delete</button>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</section>

@@ -1,0 +1,36 @@
+<section class="w-full md:container mx-auto md:px-7 xl:px-4 pt-4">
+    <div class="bg-gray-700 w-full py-6 px-2 xs:px-4 sm:px-6 md:container mx-auto md:rounded">
+        <form action="/admin/new_game" method="POST" class="flex flex-col justify-center items-center lg:text-2xl md:flex-row">
+            <label for="pages" class="py-1 px-4 sm:py-2 text-white font-bold">Pages: </label>
+            <select name="pages" id="" class="text-center w-full p-2 text-sm xs:text-lg sm:text-xl md:w-5/12">
+            {{#each pages}}
+                <option value="{{this}}">{{this}}</option>
+            {{/each}}
+            </select>
+            <button class="px-10 py-2 mt-4 rounded font-bold text-sm xs:text-lg md:text-xl w-full bg-green-200 text-gray-800 md:w-2/6 md:ml-10 md:mt-0 hover:bg-green-100">New Game</button>
+        </form>
+    </div>
+</section>
+<section class="w-full px-2 md:px-0 md:w-auto md:container mx-auto text-center">
+    <table class="text-center p-6 w-full mt-10 text-gray-50 text-md md:text-xl">
+        <tr class="w-full border border-solid border-1 border-white">
+            <th class="w-3/6 p-2">Name</th>
+            <th class="w-3/6 p-2">Link</th>
+        </tr>
+        {{#each games}}
+            <tr>
+                <td class="p-2">[{{page}}] {{name}}</td>
+                <td class="p-2">
+                    <div class="flex flex-col md:flex-row items-center justify-center">
+                        <a href="/admin/game/edit/{{ _id }}">
+                            <button class="bg-green-200 text-gray-800 w-36 rounded px-2 py-2 hover:bg-green-100 md:mr-4">Edit</button>
+                        </a>
+                        <a href="/admin/game/delete/{{ _id }}">
+                            <button class="bg-red-200 text-gray-800 w-36 rounded px-2 py-2 hover:bg-red-100 mt-2 md:mt-0">Delete</button>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</section>

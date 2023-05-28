@@ -1,0 +1,29 @@
+<header class="bg-blue-500 w-full z-50 fixed">
+    <nav class="text-right lg:text-center">
+        <button id="mobile-button" class=" mr-2 text-5xl sm:p-0 md:p-1 lg:hidden lg:m-0">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul id="menu" class="flex-column justify-center mt-2 hidden items-center xs:text-lg lg:m-0 md:text-xl lg:flex lg:text-2xl">
+            <a href="/">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">Home</li>
+            </a>
+            {{#each menu}}
+                <a href="/page/{{this}}">
+                    <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">{{this}}</li>
+                </a>
+            {{/each}}
+            <a href="/about/">
+                <li class="text-center w-full h-full py-3 lg:h-auto lg:w-auto lg:px-8 lg:py-4 hover:bg-blue-400">About</li>
+            </a>
+        </ul>
+    </nav>
+</header>
+<script>
+    const btn = document.querySelector('button[id=mobile-button]');
+    const menu = document.querySelector('ul[id=menu]');
+
+    btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    });
+
+</script>
