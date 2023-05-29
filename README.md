@@ -50,7 +50,7 @@ Open a pull request
 <br><br>
 **License**
 <br><br>
-This project is licensed under the ISC License. Feel free to use, modify, and distribute the code as needed.
+This project is licensed under the MPL-2.0 License. Feel free to use, modify, and distribute the code as needed.
 <br><br>
 **Contact**
 <br><br>
