@@ -30,7 +30,7 @@ router.get('/:section/', async (req, res) => {
       }
       const count = await Game.countDocuments(filter);
       const totalPages = Math.ceil(count / gamesPerPage);
-      const games = await Game.find(filter).skip((actualPage - 1) * gamesPerPage).limit(gamesPerPage).exec();
+      const games = await Game.find({page: req.params.section} , filter).skip((actualPage - 1) * gamesPerPage).limit(gamesPerPage).exec();
       const gamesList = games.map((game) => ({
         name: game.name,
         description: game.description,
