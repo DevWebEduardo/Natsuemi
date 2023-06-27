@@ -54,6 +54,6 @@ This project is licensed under the MPL-2.0 License. Feel free to use, modify, an
 <br><br>
 **Contact**
 <br><br>
-For any inquiries or feedback, please acess https://sakurasou.com.br.
+For any inquiries or feedback, please acess https://solanin.icu.
 <br><br>
 Let the cooperative gaming adventure begin with Natsusemi!
