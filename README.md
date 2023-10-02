@@ -1,4 +1,4 @@
-**Natsusemi**
+**Natsusemi - Deprecated**
 <br><br>
 Welcome to Natsusemi, a blog/site dedicated to displaying cooperative games. This platform serves as a hub for gamers seeking exciting cooperative gaming experiences. With a simple and minimalistic design, Natsuemi provides a fully responsive layout that adapts seamlessly to all screen sizes.
 <br><br>
